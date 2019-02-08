@@ -1,0 +1,60 @@
+
+navbar{
+    hamburger{
+        ingredients{
+            (todo, populate)
+        }
+        ethnicity{
+            (todo, populate)
+        }
+        allergens{
+            nut
+            dairy
+        }
+        Exclusion{
+            kosher
+            vegetarian
+            vegan
+        }
+    }
+}
+structure{
+    tbd
+}
+search box (billboard){
+    title{
+        font?
+    }
+    input form{}
+    info{
+        modal{
+            search restrictions?
+        }
+    }
+    categories{
+        ref.navbar.hamburger.ingredients
+    }
+    search button{
+        Logan?
+    }
+}
+
+carousel{
+    cardObject{
+        link to proper html{}
+        picture background{
+            opacity?
+        }
+        title{}
+        description
+        "of the day" functionality{
+            api call? array of options? Array option connected to day of the week?
+        }
+    }
+}
+
+footer{
+    stuck to bottom{}
+    contact us
+    title
+}
