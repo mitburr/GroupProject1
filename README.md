@@ -1,5 +1,5 @@
 # GroupProject1
-Group Project 1
+This is our Group Project 1
 
 Project Title
 TBD
