@@ -1,15 +1,71 @@
-function resulthealth(allergyArray) {
+var dietArray = ["403^Paleo", "386^Vegan", "387^Lacto-ovo vegetarian"]
+
+var allergiesArray = ["393^Gluten-Free", "394^Peanut-free", 
+"396^Dairy-Free", "395^Tree Nut-Free", "392^Wheat-Free"]
+
+var cuisineArray = ["American", "Italian", "Asian", 
+"Mexican", "Barbeque", "Swedish"]
+
+var peanutAllergy = false;
+
+var ingredientsArray = [""]
+
+function resulthealth(cuisineArray) {
     var text = "";
-    for (i = 0; i < allergyArray.length; i++) { 
-        text += "&health=" + allergyArray[i];
+    for (i = 0; i < cuisineArray.length; i++) { 
+        text += "&allowedCuisine[]=" + cuisineArray[i];
+    }
+    return text;
+}
+function resulthealth(dietArray) {
+    var text = "";
+    for (i = 0; i < dietArray.length; i++) { 
+        text += "&allowedDiet[]=" + dietArray[i];
     }
     return text;
 }
 
+function resulthealth(allergiesArray) {
+    var text = "";
+    for (i = 0; i < allergiesArray.length; i++) { 
+        text += "&allowedAllergy[]=" + allergiesArray[i];
+    }
+    return text;
+}
+
+function resulthealth(ingredientsArray) {
+    var text = "";
+    for (i = 0; i < ingredientsArray.length; i++) { 
+        text += "&allowedIngredient[]=" + ingredientsArray[i];
+    }
+    return text;
+}
+
+// app ID: 23c56a38
+// app key 404c3b636f09a6a81ea04ee17031d1d7
+
+"http://api.yummly.com/v1/api/recipes?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7&q=" + food + 
+"&requirePictures=true" + allergy 
+
+// Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat
+// http://api.yummly.com/v1/api/recipes?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY&q=onion+soup
+// &allowedDiet[]=390^Pescetarian&allowedDiet[]=388^Lacto vegetarian
+// Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian
+// http://api.yummly.com/v1/api/recipes?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY&q=onion+soup
+// &allowedCuisine[]=cuisine^cuisine-american
+// American, Italian, Asian, Mexican, Southern & Soul Food, French, 
+// Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, 
+// Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish,
+//  Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese
+
+
+// database for allergies and diets
+// http://api.yummly.com/v1/api/metadata/diet?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7
+// http://api.yummly.com/v1/api/metadata/allergy?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7
 $(document).ready(function(){
+
     var allergies = ["peanut-free", "vegetarian", "vegan"]
-    // var allergies = ["peanut-free",]
-    // var allergies = []
+    
     $("#display-images").empty();
     var input = "chicken";
 
@@ -28,26 +84,6 @@ $(document).ready(function(){
     }).done(function(response) {
 
         
-        // for(var j = 0; j < limit; j++) {    
-
-        //     var displayDiv = $("<div>");
-        //     displayDiv.addClass("holder");
         
-        //     var image = $("<img>");
-        //     image.attr("src", response.data[j].images.original_still.url);
-        //     image.attr("data-still", response.data[j].images.original_still.url);
-        //     image.attr("data-animate", response.data[j].images.original.url);
-        //     image.attr("data-state", "still");
-        //     image.attr("class", "gif");
-        //     displayDiv.append(image);
-
-        //     var rating = response.data[j].rating;
-        //     console.log(response);
-        //     var pRating = $("<p>").text("Rating: " + rating);
-        //     displayDiv.append(pRating)
-
-        //     $("#display-images").append(displayDiv);
-            console.log(response)
-        // }
     });
 });
