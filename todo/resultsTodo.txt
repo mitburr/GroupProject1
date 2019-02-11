@@ -19,8 +19,9 @@ structure{
         }
     }
 }
+C
 navbar{
-    implemetn
+    implement
 }
 reimplement carousel{
     vertical carousel
