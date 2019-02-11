@@ -31,8 +31,11 @@ C
 recipe{
     title{
         picture
+        C
         title
+        C
         description
+        C
         servings (alterable?)
     }
     ingredient{
