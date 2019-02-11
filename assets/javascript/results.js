@@ -1,24 +1,25 @@
+let cardAttributes ={
+    title : 'test',
+    description: 'test',
+    src: 'assets/images/Placeholder_Image_400x200_px.png',
+}
 
-$('#myCarousel').carousel({
-    interval: false
-});
-
-//scroll slides on swipe for touch enabled devices
-
-$("#myCarousel").on("touchstart", function(event){
-
-    var yClick = event.originalEvent.touches[0].pageY;
-    $(this).one("touchmove", function(event){
-
-        var yMove = event.originalEvent.touches[0].pageY;
-        if( Math.floor(yClick - yMove) > 1 ){
-            $(".carousel").carousel('next');
-        }
-        else if( Math.floor(yClick - yMove) < -1 ){
-            $(".carousel").carousel('prev');
-        }
-    });
-    $(".carousel").on("touchend", function(){
-        $(this).off("touchmove");
-    });
-});
+let cardsDiv = $("#cardsDiv");
+let cardCreate = function(cardAttributes){
+    let newCard = $("<div class='card bg-dark text-white'>");
+    let  cardImage = $("<img src='assets/images/Placeholder_Image_400x200_px.png' class='card-img'>");
+    let cardImageOverlayDiv = $("<div class='card-img-overlay'>" );
+    let cardTitle = $("<h5 class='card-title'>");
+    let cardDescription = $("<p class='card-text'>");
+    cardImage.attr("src", cardAttributes.src);
+    cardTitle.text(cardAttributes.title);
+    cardDescription.text(cardAttributes.cardDescription);
+    cardImageOverlayDiv.append(cardTitle);
+    cardImageOverlayDiv.append(cardDescription);
+    newCard.append(cardImage);
+    newCard.append(cardImageOverlayDiv);
+    cardsDiv.append(newCard);
+}
+cardCreate(cardAttributes);
+cardCreate(cardAttributes);
+cardCreate(cardAttributes);
