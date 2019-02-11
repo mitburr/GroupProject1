@@ -1,24 +1,11 @@
-// How multiple ingredients are handles will have to be addressed
+
 //IDEA: an add button in the search field that will push to an array, array will auto fill API
-var searchPlaceholder;
-var searchPlaceholderAdditionalIngredient;
-var ingredientsArray = ["chicken", "onions"];
+var ingredientsArray = [];
 
 $(document).ready(function (){
-
-    
     console.log(ingredientsArray);
-    //function adding ingredients from the search fuction
-    //pushes to the  ingredientsArray
-    // function addIngredientField() {
-    //     var userInput = $('#placeholderIngredientField').val();
-    //     ingredientsArray.push(userInput);
-    //     console.log(ingredientsArray);
-    // }
-    
-    
     //on click function for adding ingredients to array
-    $("#placeholderSubmitButton").on("click", function () {
+    $("#placeholderAddButton").on("click", function () {
         console.log("Button Clicked");
         var userInput = $('#placeholderIngredientField').val();
         // if (userInput) {
@@ -28,42 +15,50 @@ $(document).ready(function (){
         console.log(ingredientsArray);
     });
     
-    
+
+    //testing Yummly API call
+    $("#placeholderSearchRecipeButton").on("click", function () {
+        
+        var ingredientsArrayOutput = ingredientsArray.join('+');
+        
+        console.log(ingredientsArrayOutput)
+        searchRecipe(ingredientsArrayOutput);
+    });
+
     //API call the search results.
-    //searchPlacehold will be the variable to add into the API call
-    //API key and link is placeholder also
-    //Display Recipes will give search results
-    //search Place
-    
-    function searchRecipe(searchPlaceholder) {
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-            searchPlaceholder + "&api_key=vWeqA6PcC3xHnWrrZbAf3lPknrmsIrEm&limit=10";
-    
+    // Yummly API Key 404c3b636f09a6a81ea04ee17031d1d7
+    function searchRecipe(ingredientsArrayOutput) {
+
+        var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=23c56a38&_app_key=0e54a8ce40a665ee3dc2dc122f3dbac7&q=" + ingredientsArrayOutput;
+        console.log(queryURL)
         $.ajax({
             url: queryURL,
             method: "GET"
+            
         })
             .done(function (response) {
+                console.log(response)
                 displayRecipes(response);
             })
     }
     
+    //Display Recipes will give search results when completed correctly
     //Displays recipes
     //response data is set up for Giphy API and will need to be modified to work with the correct API
-    
+    //Display Recipe API Call http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=23c56a38&_app_key=0e54a8ce40a665ee3dc2dc122f3dbac7
+    //OR use recipe ID and fill out URL
+
     function displayRecipes(response) {
         $("#placeholderRecipeDisplay").empty();
-        var results = response.data;
+        var results = response.matches;
         for (var i = 0; i < results.length; i++) {
-            var rating = "<div class='ratings'> Rating: " + (results[i].rating) + " </div>";
-            var image = '<img src= " ' + response.data[i].images.fixed_height_still.url
-                + '" data-still=" ' + response.data[i].images.fixed_height_still.url
-                + ' " data-animate=" ' + response.data[i].images.fixed_height.url
-                + '" data-state="still" class="gif" style= "width:380px;">'
-                + rating;
+            var recipeID = "<div class='recipeID'> Recipe ID: " + (results[i].id) + " </div>";
+            var image = '<img src= " ' + results[i].imageUrlsBySize[90].slice(0,-6) 
+                + '" class="recipeImages" style= "width:360px;">'
+                + recipeID;
     
-            image = "<div class='col-md-4'>" + image + "</div>";
-            $('#placeholderRecipeDisplay').append(image);
+            image2 = "<div class='col-md-4'>" + image + "</div>";
+            $('#placeholderRecipeDisplay').append(image2);
         }
     }
 })
