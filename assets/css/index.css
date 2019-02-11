@@ -1,6 +1,29 @@
 .jumbotron{
 	padding: 2rem;
 	margin: 2rem 0;
+	background-color: lightgray;
+}
+
+h1{
+	margin: auto;
+	margin-left: 1rem;
+}
+
+#modal-button{
+	position: absolute;
+	right: 0;
+	margin: auto;
+	margin-right: 3rem;
+}
+
+#search-button{
+	margin: auto;
+	margin-left: 1rem;
+}
+
+#dropdown-button-custom{
+	margin: auto;
+	margin-right: 1rem;
 }
 
 #carouselExampleIndicators{
