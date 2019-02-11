@@ -1,14 +1,14 @@
-let cardAttributes ={
-    title : 'test',
+let cardAttributes = {
+    title: 'test',
     description: 'test',
     src: 'assets/images/Placeholder_Image_400x200_px.png',
 }
 
 let cardsDiv = $("#cardsDiv");
-let cardCreate = function(cardAttributes){
+let cardCreate = function (cardAttributes) {
     let newCard = $("<div class='card bg-dark text-white'>");
-    let  cardImage = $("<img src='assets/images/Placeholder_Image_400x200_px.png' class='card-img'>");
-    let cardImageOverlayDiv = $("<div class='card-img-overlay'>" );
+    let cardImage = $("<img src='assets/images/Placeholder_Image_400x200_px.png' class='card-img'>");
+    let cardImageOverlayDiv = $("<div class='card-img-overlay'>");
     let cardTitle = $("<h5 class='card-title'>");
     let cardDescription = $("<p class='card-text'>");
     cardImage.attr("src", cardAttributes.src);
@@ -20,6 +20,13 @@ let cardCreate = function(cardAttributes){
     newCard.append(cardImageOverlayDiv);
     cardsDiv.append(newCard);
 }
+
+let recipeTitleCreation = function(titleObject){
+    $("#titleImage").attr("src", titleObject.src);
+    $('#title').text(titleObject.title);
+    $('#description').text(titleObject.description);    
+}
+recipeTitleCreation(cardAttributes);
 cardCreate(cardAttributes);
 cardCreate(cardAttributes);
 cardCreate(cardAttributes);
