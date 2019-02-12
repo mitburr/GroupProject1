@@ -27,10 +27,15 @@ reimplement carousel{
     vertical carousel
     add restricted objects
 }
+C
 recipe{
     title{
-        picturetitle
+        picture
+        C
+        title
+        C
         description
+        C
         servings (alterable?)
     }
     ingredient{

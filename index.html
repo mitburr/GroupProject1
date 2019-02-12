@@ -9,12 +9,10 @@
     <!-- Bringing in Jquery and Bootstrap and also linking our js and css file -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
-
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/main.js"></script>
 
 </head>
@@ -22,46 +20,56 @@
 <body>
 
     <!-- Navbar added by Taylor -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
 
         <a class="navbar-brand" href="index.html">[Logo here]</a>
         <a class="navbar-brand" href="#">Cart</a>
 
         <!-- Navbar dropdown -->
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-
         <button class="navbar-toggler navbar-bg-dark" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
-
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+
+                <li><a tabindex="-1" href="#">HTML</a></li>
+                <li><a tabindex="-1" href="#">CSS</a></li>
+                <li class="dropdown-submenu">
+
+                    <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                        <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                        <li class="dropdown-submenu">
+
+                            <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="#">3rd level dropdown</a></li>
+                                <li><a href="#">3rd level dropdown</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+
+
+
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Ethnicities</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Flavors</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Ingredients</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Exclusions</a>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link navbar-toggler-icon" href="#" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -74,11 +82,12 @@
                         <a class="dropdown-item" href="#">Red Fish</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Blue Fish</a>
-
                     </div>
+
                 </li>
             </ul>
         </div>
+        <div id="overlay"></div> -->
     </nav>
 
 
@@ -89,16 +98,6 @@
 
             <div class="col-md-8">
 
-
-                <div class="jumbotron">
-                    <h1 class="display-4">Search for Ingredients</h1>
-                    <hr class="my-4">
-                    <input type="text" placeholder="Ingredients"/>
-                    <hr class="my-4">
-                    <p>
-                        <a class="btn btn-primary btn-lg" id="search-button" href="#" role="button">Search</a>
-                    </p>
-
                 <div class="jumbotron">
 
                     <div class="row">
@@ -107,7 +106,7 @@
                         <!-- Modal Button Trigger -->
                         <button type="button" id="modal-button" class="btn btn-primary" data-toggle="modal"
                             data-target="#exampleModal">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
 
                     </div>
@@ -140,34 +139,64 @@
 
 
 
-                    <hr class="my-4">
-                    <input type="text" placeholder="Ingredients" />
-                    <hr class="my-4">
-
+                    <hr class="my-3">
+                    <input type="text" placeholder="Ingredients">
+                    <a class="btn btn-primary btn-md" id="addIngredients-button" href="#" role="button">Add Ingredient</a>
+                    <div id="ingredientsDisplay"></div>
+                    <hr class="my-3">
+                   
 
                     <div class="row">
 
 
-                        <a class="btn btn-primary btn-lg" id="search-button" href="#" role="button">Search</a>
-
+                        <a class="btn btn-primary btn-md" id="search-button" href="#" role="button">Search</a>
 
                         <div class="dropdown" id="dropdown-button-custom">
                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
+                                Click for Diet Restrictions
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item"><input type="checkbox" name="diet" value="keto">Keto<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="diet" value="paleo">Paleo<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="diet" value="pescetarian">Pescetarian<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="diet" value="vegan">Vegan<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="diet" value="vegetarian">Vegetarian<br></a>
+
+                            </div>
+                        </div> <!-- dropdown end -->
+                        <div class="dropdown" id="dropdown-button-custom">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Click for Allergen Free Receipes
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="glutenFree">Gluten Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="peanutFree">Peanut Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="dairyFree">Dairy Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="treeNutFree">Tree Nuts Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="wheatFree">Wheat Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="eggFree">Egg Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="sesameFree">Sesame Free<br></a>
+                                <a class="dropdown-item"><input type="checkbox" name="allergy" value="seafoodFree">Seafood Free<br></a>
+
                             </div>
                         </div> <!-- dropdown end -->
 
                     </div> <!-- row end -->
 
+
+
+
+
+
                 </div>
 
             </div>
+
+
+
+
 
             <div class="col-md-2"></div>
         </div>
@@ -209,6 +238,52 @@
 
 
 
+    <!-- Footer added by Beckett -->
+    <!-- Footer -->
+    <footer class="page-footer font-small teal pt-4">
+
+        <!-- Footer Text -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-4"></div>
+
+                <!-- Grid column -->
+                <div class="col-md-4 mt-md-0 mt-4" id="grid-column">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">API calls from Yummly</h5>
+                    <p>Enjoy ease with finding your next meal! Type in the search bar an ingredient you already have, a
+                        cuisine category, or even your favorite dish!</p>
+                    <p>Recipe search powered by <a href='http://www.yummly.co/recipes'><img alt='Yummly'
+                                src='https://static.yummly.co/api-logo.png' /></a></p>
+                </div>
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <!-- Grid column -->
+                <div class="col-md-4"></div>
+
+
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Text -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="http://www.yummly.co/recipes/"> Yummly</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <script src=""></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

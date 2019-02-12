@@ -1,7 +1,7 @@
-var dietArray = ["403^Paleo", "386^Vegan", "387^Lacto-ovo vegetarian"]
+var dietArray = ["403^Paleo", "386^Vegan", "406^Ketogenic", "390^Pescetarian", "387^Lacto-ovo vegetarian"]
 
 var allergiesArray = ["393^Gluten-Free", "394^Peanut-free", 
-"396^Dairy-Free", "395^Tree Nut-Free", "392^Wheat-Free"]
+"396^Dairy-Free", "395^Tree Nut-Free", "392^Wheat-Free", "397^Egg-Free", "399^Sesame-Free", "398^Seafood-Free"]
 
 var cuisineArray = ["American", "Italian", "Asian", 
 "Mexican", "Barbeque", "Swedish"]

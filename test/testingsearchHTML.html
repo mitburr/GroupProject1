@@ -13,16 +13,21 @@
 </head>
 
 <body>
+    <div class="container">
+        <div>
+            <form id="buttonGenerator">
+                <input id="placeholderIngredientField" type="text" class="form-control" required="required"
+                    data-error="Please add an ingredient">
+                <div class="help-block with-errors"></div>
+            </form>
+            <!-- Submit button -->
+            <input type="submit" id="placeholderAddButton" class="btn btn-success btn-send" value="Ingredient Add">
+        </div>
+        <input type="submit" id="placeholderSearchRecipeButton" class="btn btn-success btn-send" value="Submit">
 
-    <div>
-        <form id="buttonGenerator">
-            <input id="placeholderIngredientField" type="text" class="form-control" required="required"
-                data-error="Please add an ingredient">
-            <div class="help-block with-errors"></div>
-        </form>
-        <!-- Submit button -->
-        <input type="submit" id="placeholderSubmitButton" class="btn btn-success btn-send" value="Submit">
+        <div class="row" id="placeholderRecipeDisplay"></div>
     </div>
+
 
 </body>
 

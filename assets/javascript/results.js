@@ -1,24 +1,48 @@
+let recipe = {
+    title: 'test',
+    description: 'test',
+    src: 'assets/images/Placeholder_Image_400x200_px.png',
+    ingredients: [
+        'tofu',
+        'rice',
+        'gizzard',
+        'bulletssssssssss'
+    ]
+}
 
-$('#myCarousel').carousel({
-    interval: false
-});
+let cardsDiv = $("#cardsDiv");
+let cardCreate = function (recipe) {
+    let newCard = $("<div class='card bg-dark text-white'>");
+    let cardImage = $("<img src='assets/images/Placeholder_Image_400x200_px.png' class='card-img'>");
+    let cardImageOverlayDiv = $("<div class='card-img-overlay'>");
+    let cardTitle = $("<h5 class='card-title'>");
+    let cardDescription = $("<p class='card-text'>");
+    cardImage.attr("src", recipe.src);
+    cardTitle.text(recipe.title);
+    cardDescription.text(recipe.cardDescription);
+    cardImageOverlayDiv.append(cardTitle);
+    cardImageOverlayDiv.append(cardDescription);
+    newCard.append(cardImage);
+    newCard.append(cardImageOverlayDiv);
+    cardsDiv.append(newCard);
+}
 
-//scroll slides on swipe for touch enabled devices
+let recipeTitleCreation = function(titleObject){
+    $("#titleImage").attr("src", titleObject.src);
+    $('#title').text(titleObject.title);
+    $('#description').text(titleObject.description);    
+}
 
-$("#myCarousel").on("touchstart", function(event){
+let createRecipeIngredients = function(ingredients){
+    for( let i = 0; i < ingredients.length; i++){
+        let ingredientItem = $('<li class="list-group-item">');
+        ingredientItem.text(ingredients[i]);
+        $("#ingredientsList").append(ingredientItem);
+    }
+}
 
-    var yClick = event.originalEvent.touches[0].pageY;
-    $(this).one("touchmove", function(event){
-
-        var yMove = event.originalEvent.touches[0].pageY;
-        if( Math.floor(yClick - yMove) > 1 ){
-            $(".carousel").carousel('next');
-        }
-        else if( Math.floor(yClick - yMove) < -1 ){
-            $(".carousel").carousel('prev');
-        }
-    });
-    $(".carousel").on("touchend", function(){
-        $(this).off("touchmove");
-    });
-});
+createRecipeIngredients(recipe.ingredients);
+recipeTitleCreation(recipe);
+cardCreate(recipe);
+cardCreate(recipe);
+cardCreate(recipe);
