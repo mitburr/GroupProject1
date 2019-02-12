@@ -1,11 +1,11 @@
 body{
-	background-color: #893d45;
+	background-color: #99313b;
 }
 
 .standard-colors{
 	background-color: #ad656d;
 	/* border: #829c75 5px solid; */
-	border: #538069 5px solid;
+	border: #17550b 10px ridge;
 }
 
 .jumbotron{
@@ -54,4 +54,8 @@ h1{
 .dropdown-menu-right {
     right: 0;
     left: auto;
+}
+
+.btn-success{
+	background-color: #355f3a;
 }
