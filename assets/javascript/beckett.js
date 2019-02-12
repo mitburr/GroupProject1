@@ -60,8 +60,8 @@ function resulthealth(ingredientsArray) {
 
 
 // database for allergies and diets
-// http://api.yummly.com/v1/api/metadata/diet?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7
-// http://api.yummly.com/v1/api/metadata/allergy?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7
+http://api.yummly.com/v1/api/metadata/diet?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7
+http://api.yummly.com/v1/api/metadata/allergy?_app_id=23c56a38&_app_key=404c3b636f09a6a81ea04ee17031d1d7
 $(document).ready(function(){
 
     var allergies = ["peanut-free", "vegetarian", "vegan"]
