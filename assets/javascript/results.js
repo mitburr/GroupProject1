@@ -35,7 +35,7 @@ let recipeTitleCreation = function(titleObject){
 
 let createRecipeIngredients = function(ingredients){
     for( let i = 0; i < ingredients.length; i++){
-        let ingredientItem = $('<li class="list-group-item">');
+        let ingredientItem = $('<li class="list-group-item absolute-left">');
         ingredientItem.text(ingredients[i]);
         $("#ingredientsList").append(ingredientItem);
     }
