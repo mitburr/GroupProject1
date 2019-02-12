@@ -54,7 +54,7 @@ $(document).ready(function (){
         for (var i = 0; i < results.length; i++) {
             var recipeID = "<div class='recipeID'> Recipe ID: " + (results[i].id) + " </div>";
             var image = '<img src= " ' + results[i].imageUrlsBySize[90].slice(0,-6) 
-                + '" class="recipeImages" style= "width:360px;">'
+                + '" class="recipeImages" style= "width:380px;">'
                 + recipeID;
     
             image2 = "<div class='col-md-4'>" + image + "</div>";
