@@ -1,0 +1,21 @@
+#container{
+    background-color: #ad656d;
+}
+.card{
+    margin: 5px;
+}
+#mediaDiv{
+    background-color: #893d46;
+}
+#titleImg{
+    float: left;
+}
+#ingredientsList{
+    background-color: #ad656d;
+}
+.list-group-item{
+    background-color: #ad656d;
+}
+#mediaDiv{
+    margin-top: 200px;
+}
