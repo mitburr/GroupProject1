@@ -2,7 +2,7 @@
 var ingredientsArray = [];
 var dietArray = [];
 var allergenArray = [];
-
+var buttonCounter = 0;
 //ready function
 $(document).ready(function () {
 
@@ -11,10 +11,26 @@ $(document).ready(function () {
     $("#addIngredients-button").on("click", function () {
         var userInput = $('#ingredientField').val();
         ingredientsArray.push(userInput)
-        $("#recipeGenerator")[0].reset()
+        $("#recipeGenerator")[0].reset() //clears search field
+        var newItem = ($("<div id='ingredientsDiv"+ buttonCounter +"' value='"+ userInput +"' class='alert alert-danger' role='alert'>" + userInput + 
+        "<button type='button' class='close' id="+ buttonCounter +"  aria-label='Close' data-ingredient-index=''>" +
+        "<span>" + "X" + "</span>" +
+        "</button>"+ 
+       "</div>"));
+       buttonCounter++;
+        $('#ingredientsDisplay').append(newItem);
         console.log("Ingredients Array: ", ingredientsArray);
     });
 
+    //Remove Ingredient Function
+    $(document).on("click", ".close", function () {
+        var ingredientID = "#ingredientsDiv" + $(this).attr("id");
+        var ingtext = $(ingredientID).attr("value");
+        ingredientsArray.splice(ingredientsArray.indexOf(ingtext),1)
+        $(ingredientID).remove()
+        console.log("Ingredients Array: ", ingredientsArray);
+    });
+ 
 
     //Pushing Diet Requirements to Array based on checkboxed clicked
     function addDietRequirements() {
@@ -117,8 +133,17 @@ $(document).ready(function () {
 
 })
 function openResultsPage(){
-    window.location.href = "results.html";
+    window.location.href = "results3.html";
 }
+
+
+
+
+
+
+
+
+
 
 //***********DO NOT USE CODE, FOR REFERENCE ONLY******************** */
 
