@@ -16,8 +16,6 @@
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-
 </head>
 
 <body onload="onLoadFunction()">
@@ -40,100 +38,59 @@
 	</nav>
 
 
-
 	<div class="row" id="main-row">
 		<div class="col-md-3" id="recipes-side-column">
-
 			<div class="side-recipe-div" id="recipe-div-0">
-				<div class="side-recipe-title" id="recipe-title-0">0</div>
+				<div class="side-recipe-title" id="recipe-title-0"></div>
 			</div>
 
 			<div class="side-recipe-div" id="recipe-div-1">
-				<div class="side-recipe-title" id="recipe-title-1">1</div>
+				<div class="side-recipe-title" id="recipe-title-1"></div>
 			</div>
 
 			<div class="side-recipe-div" id="recipe-div-2">
-				<div class="side-recipe-title" id="recipe-title-2">2</div>
+				<div class="side-recipe-title" id="recipe-title-2"></div>
 			</div>
 
 			<div class="side-recipe-div" id="recipe-div-3">
-				<div class="side-recipe-title" id="recipe-title-3">3</div>
+				<div class="side-recipe-title" id="recipe-title-3"></div>
 			</div>
 
 			<div class="side-recipe-div" id="recipe-div-4">
-				<div class="side-recipe-title" id="recipe-title-4">4</div>
+				<div class="side-recipe-title" id="recipe-title-4"></div>
 			</div>
-
 		</div>
-
 
 
 		<div class="col-md-6" id="recipe-main-column">
-
 			<div id="clicked-recipe">
-				<div id="main-recipe-title">Recipe Name</div>
-				<div id="main-recipe-description">Description</div>
-				<div id="main-recipe-ingredients">Ingredients</div>
+				<div id="main-recipe-title"></div>
+				<div id="main-recipe-description"></div>
 				<div id="main-recipe-link">
 					<img src="" alt="Recipe Link" />
 				</div>
+				<div id="main-recipe-ingredients"></div>
 			</div>
-
 		</div>
-
-
-
-
 
 
 		<div class="col-md-3" id="wine-column">
-
-
 			<div id="wine-pairing">
-
-				<div id="wine-type">wine type(s)</div>
-
-				<div id="wine-type-description">description
+				<div id="wine-type"></div>
+				<div id="wine-type-description">
 					<button class="btn btn-secondary" id="wine-button" role="button">Mode</button>
 				</div>
-
 			</div>
 
-
-
-
-
+		<!-- will show up when "Mode" button (above) is pressed -->
 			<div id="wine-price-details">
-
-				<div id="wine-brand">brand</div>
-
-				<div id="wine-brand-description">description</div>
-
-				<div id="wine-brand-price">price</div>
-
-				<div id="wine-brand-link">link</div>
-
-				<div id="wine-brand-image">image</div>
-
-
+				<div id="wine-brand"></div>
+				<div id="wine-brand-description"></div>
+				<div id="wine-brand-price"></div>
+				<div id="wine-brand-link"></div>
+				<div id="wine-brand-image"></div>
 			</div>
-
-
-
-
-
-
-
 		</div>
-
-
-
-
-
-
-
-
-
 	</div>
 
 	<!-- jQuery first (removed -causing conflict by LG), then Popper.js, then Bootstrap JS -->
