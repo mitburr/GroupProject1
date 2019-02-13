@@ -11,7 +11,7 @@ $(document).ready(function () {
     $("#addIngredients-button").on("click", function () {
         var userInput = $('#ingredientField').val();
         ingredientsArray.push(userInput)
-        $("#buttonGenerator")[0].reset()
+        $("#recipeGenerator")[0].reset()
         console.log("Ingredients Array: ", ingredientsArray);
     });
 
@@ -105,10 +105,9 @@ $(document).ready(function () {
         $.ajax({
             url: queryURL,
             method: "GET",
-            // dataType: "json"
+            dataType: "json"
         })
         .done(function (response) {
-            // displayRecipes(response);
             sessionStorage.removeItem('apiCallResults');
             sessionStorage.clear();
             sessionStorage.setItem('apiCallResults', JSON.stringify(response));
@@ -118,10 +117,10 @@ $(document).ready(function () {
 
 })
 function openResultsPage(){
-    window.location.href = "testOpenPageandDisplay.html";
+    window.location.href = "results.html";
 }
 
-//***********USED CODE, FOR REFERENCE ONLY******************** */
+//***********DO NOT USE CODE, FOR REFERENCE ONLY******************** */
 
 
 // window.onload = function() {

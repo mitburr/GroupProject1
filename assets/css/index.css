@@ -1,4 +1,7 @@
 body{
+	
+	background-image: url(../images/romanticDate.jpg);
+	background-size: cover;
 	background-color: #99313b;
 }
 
