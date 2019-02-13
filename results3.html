@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Results3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/results3.css" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/navbar.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body onload="onLoadFunction()">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-container">
+		<a class="navbar-brand" href="index.html">[Logo here]</a>
+		<a class="navbar-brand" href="index.html">Back to Search</a>
+		<!-- Navbar dropdown -->
+		<div class="btn-group ml-auto">
+			<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">
+				My Account
+			</button>
+			<div class="dropdown-menu dropdown-menu-right">
+				<button class="dropdown-item" type="button">Log In</button>
+				<button class="dropdown-item" type="button">Settings</button>
+				<button class="dropdown-item" type="button">Sign Up</button>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div class="row" id="main-row">
+		<div class="col-md-3" id="recipes-side-column">
+
+			<div class="side-recipe-div" id="first-recipe-div">
+				<div class="side-recipe-title" id="first-recipe-title">first</div>
+			</div>
+
+
+			<div class="side-recipe-div" id="second-recipe-div">
+				<div class="side-recipe-title" id="second-recipe-title">second</div>
+			</div>
+
+
+			<div class="side-recipe-div" id="third-recipe-div">
+				<div class="side-recipe-title" id="third-recipe-title">third</div>
+			</div>
+
+
+
+			<div class="side-recipe-div" id="fourth-recipe-div">
+				<div class="side-recipe-title" id="fourth-recipe-title">fourth</div>
+			</div>
+
+
+
+			<div class="side-recipe-div" id="fifth-recipe-div">
+				<div class="side-recipe-title" id="fifth-recipe-title">fifth</div>
+			</div>
+
+		</div>
+
+
+
+		<div class="col-md-6" id="recipe-main-column">
+
+
+			<div id="clicked-recipe"></div>
+
+
+
+
+			<!-- 
+			<div class="media" id="mediaDiv">
+				<img src="..." class="mr-3 rounded" id="titleImage" alt="...">
+				<div class="media-body" id="titleDiv">
+					<h5 class="mt-0" id="title">Media heading</h5>
+					<p id="description">
+						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+						sollicitudin.
+						Cras
+						purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+						nisi
+						vulputate fringilla. Donec lacinia congue felis in faucibus.
+					</p>
+					<ul class="list-group list-group-flush " id="ingredientsList">
+					</ul>
+				</div> -->
+
+
+
+		</div>
+
+		<div class="col-md-3"></div>
+
+	</div>
+
+	<!-- jQuery first (removed -causing conflict by LG), then Popper.js, then Bootstrap JS -->
+	<script src="assets/javascript/results.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
