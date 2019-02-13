@@ -1,0 +1,5 @@
+unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/pairing?maxPrice=50&food=chicken")
+.header("X-RapidAPI-Key", "84b7f3975dmshf1a2fdc786671cap19ac4fjsn5bb2b98f52e9")
+.end(function (result) {
+  console.log(result.status, result.headers, result.body);
+});
