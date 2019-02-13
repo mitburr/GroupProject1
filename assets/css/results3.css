@@ -18,27 +18,52 @@ body {
 
 
 /* Side Recipes */
+
+.side-recipe-title{
+	/* height: auto; */
+	color: white;
+	text-align: center;
+	background-color: #893d46;
+}
+
 .side-recipe-div{
 	width: 100%;
-	height: 20px;
-	margin: 1rem;
+	/* height: 50px; */
+	margin: 1rem auto;
 	background-color: greenyellow;
 }
-.side-recipe-title{
-	height: 10px;
-	background-color: cadetblue;
+
+
+
+
+
+/* Main Column */
+
+#clicked-recipe{
+	padding: 18%;
 }
-
-
-
-
-
 
 /* Clicked Recipe */
-#mediaDiv{
-    background-color: #893d46;
-	margin-top: 200px;
+
+
+#main-recipe-title{
+background-color: lightblue;
 }
+
+#main-recipe-description{
+	background-color: lightcoral;
+}
+
+#main-recipe-ingredients{
+	background-color: lightgoldenrodyellow;
+}
+
+#main-recipe-link{
+	background-color: lightgreen;
+}
+
+
+
 
 
 /*
