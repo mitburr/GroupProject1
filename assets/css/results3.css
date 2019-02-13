@@ -33,56 +33,47 @@ body {
 }
 
 
-
-
-
 /* Main Column */
 
 #clicked-recipe{
 	padding: 18%;
 }
 
-/* Clicked Recipe */
 
+/* Clicked Recipe */
 
 #main-recipe-title{
 	margin-bottom: 10%;
 	height: auto;
-	background-color: lightblue;
 }
 
 #main-recipe-description{
 	margin-bottom: 10%;
 	height: auto;
-	background-color: lightcoral;
 }
 
 #main-recipe-ingredients{
 	margin-bottom: 10%;
 	height: auto;
-	background-color: lightgoldenrodyellow;
 }
 
 #main-recipe-link{
 	margin-bottom: 10%;
 	height: auto;
-	background-color: lightgreen;
 }
 
-/* Wine Column */
 
+/* Wine Column */
 
 #wine-type{
 	margin: 1rem;
 	padding: 1rem;
-	background-color: wheat;
 }
 
 #wine-type-description{
 	position: relative;
 	margin: 1rem;
 	padding: 1rem;
-	background-color: darkcyan;
 }
 #wine-button{
 	position: absolute;
@@ -90,38 +81,27 @@ body {
 	bottom: 0;
 }
 
-
-
-
-
-
-
 #wine-brand{
 	margin: 1rem;
 	padding: 1rem;
-	background-color: lightblue;
 }
 
 #wine-brand-description{
 	margin: 1rem;
 	padding: 1rem;
-	background-color: lightcoral;
 }
 
 #wine-brand-price{
 	margin: 1rem;
 	padding: 1rem;
-	background-color: lightgoldenrodyellow;
 }
 
 #wine-brand-link{
 	margin: 1rem;
 	padding: 1rem;
-	background-color: lightgreen;
 }
 
 #wine-brand-image{
 	margin: 1rem;
 	padding: 1rem;
-	background-color: lightseagreen;
 }
