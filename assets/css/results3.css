@@ -22,14 +22,14 @@ body {
 .side-recipe-title{
 	color: white;
 	text-align: center;
-	background-color: #893d46;
+	background-color: rgb(52, 58, 64);
 }
 
 .side-recipe-div{
 	width: 100%;
 	padding-bottom: 18%;
 	margin: 1rem auto;
-	background-color: greenyellow;
+	background-color: rgba(137, 61, 70, 0.8);
 }
 
 
@@ -124,19 +124,4 @@ body {
 	margin: 1rem;
 	padding: 1rem;
 	background-color: lightseagreen;
-}
-
-
-
-/*
-
-.card{
-    margin: 5px;
-}
-#titleImage{
-    margin: 5px;
-}
-
-.list-group{
-    background-color: #ad656d
 }
