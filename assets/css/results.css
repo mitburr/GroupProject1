@@ -1,6 +1,8 @@
-#container{
+
+
+/* #container{
     background-color: #ad656d;
-}
+} */
 .card{
     margin: 5px;
 }
@@ -15,4 +17,9 @@
 }
 #mediaDiv{
     margin-top: 200px;
+}
+
+body {
+    background-image: url(../images/yellowWine2.jpg);
+    background-size: cover;
 }
