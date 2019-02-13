@@ -1,0 +1,68 @@
+Access Key ID:
+AKIAIUT2DLI3UM2XWJCA
+
+Secret Access Key:
+otoizzuyrvavCUA9ZmjTy/ojaMOypQqqzhZqYy3P
+
+AssociateTag:
+groupproject1-20
+
+
+http://webservices.amazon.com/onca/xml?
+  Service=AWSECommerceService
+  &Operation=ItemLookup
+  &ResponseGroup=Offers
+  &IdType=ASIN
+  &ItemId=B00KOKTZLQ
+  &AssociateTag=[Your_AssociateTag]
+  &AWSAccessKeyId=[Your_AWSAccessKeyId]
+  &Timestamp=[YYYY-MM-DDThh:mm:ssZ]
+  &Signature=[Request_Signature]
+
+
+
+http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&ResponseGroup=Offers&IdType=ASIN&ItemId=B00KOKTZLQ&AWSAccessKeyId=AKIAIUT2DLI3UM2XWJCA
+  
+  
+  http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=AKIAIUT2DLI3UM2XWJCA&AssociateTag=groupproject1-20&Operation=ItemSearch&Condition=All&Availability=Available&SearchIndex=Apparel&Keywords=Shirt&Timestamp=2019-02-12T12:00:00&Signature=otoizzuyrvavCUA9ZmjTy/ojaMOypQqqzhZqYy3P2019-02-12T12:00:00us-east-1iam
+  
+  http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIUT2DLI3UM2XWJCA&AssociateTag=groupproject1-20&ItemId=0679722769&Operation=ItemLookup&ResponseGroup=Images%2CItemAttributes%2COffers%2CReviews&Service=AWSECommerceService&Timestamp=2014-08-18T12%3A00%3A00Z&Version=2013-08-01
+  
+  
+  
+  
+  
+  
+   // var key = 'otoizzuyrvavCUA9ZmjTy/ojaMOypQqqzhZqYy3P';
+/*   var key = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY';
+  var dateStamp = '2019-02-12T12:00:00';
+  var regionName = 'us-east-1';
+  var serviceName = 'iam'; */
+  // var signature = key+dateStamp+regionName+serviceName+"aws4_request";
+
+
+  var kDate = CryptoJS.HmacSHA256(dateStamp, key);
+  var base64 = CryptoJS.enc.Base64.stringify(kDate);
+
+
+// var crypto = require("crypto-js");
+
+// var signature = getSignatureKey(key,dateStamp,regionName,serviceName);
+
+console.log("signature", base64);
+
+function getSignatureKey( key, dateStamp, regionName, serviceName) {
+  //   var kDate = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA256(dateStamp, "AWS4" + key));
+  //   console.log("kDate", kDate);
+  //  var kRegion = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA256(regionName, kDate));
+  //  console.log("kRegion", kRegion);
+  //   var kService = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA256(serviceName, kRegion));
+  //   var kSigning = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA256("aws4_request", kService));
+  var kDate = CryptoJS.HmacSHA256("AWS4" + key);
+  // var kRegion = CryptoJS.HmacSHA256(regionName, kDate);
+  // var kService = CryptoJS.HmacSHA256(serviceName, kRegion);
+  // var kSigning = CryptoJS.HmacSHA256("aws4_request", kService);
+  // var sample = CryptoJS.HmacSHA256("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY")
+  var base64 = CryptoJS.enc.Base64.stringify(kDate);
+  return base64;
+}
