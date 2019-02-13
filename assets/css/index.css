@@ -8,7 +8,7 @@ body{
 .standard-colors{
 	background-color: #ad656d;
 	/* border: #829c75 5px solid; */
-	border: #17550b 10px ridge;
+	border: rgb(52, 58, 64) 10px ridge;
 }
 
 .jumbotron{
@@ -59,8 +59,8 @@ h1{
     left: auto;
 }
 
-.btn-success{
-	background-color: #355f3a;
+.btn-secondary{
+	background-color: rgb(52, 58, 64);
 }
 #copyright-text{
 	color: white;
