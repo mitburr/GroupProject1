@@ -89,31 +89,6 @@ $(document).ready(function () {
                     $("#winePrincingList").append("<tr><td> Wine Image: </td><td> <img src='"+ response.productMatches[0].imageUrl + "'/></td></tr>");
                   }
 
-                // if (response.pairedWines.length > 0) {
-            
-            //   for (index in response.pairedWines) {
-                // 
-                // 
-                // tableRow.append("<td>" + ingredientsList[index] + "</td>");
-                // $("#ingredientsList").append(tableRow);
-            //     console.log("response.pairedWines[index]", response.pairedWines[index]);
-            //   }
-            // } 
-
-
-             // $("#winePairing").html("<br><br><h4> Paired Wines : "+response.pairedWines+" </h4> <br> <p>"
-    //         +response.pairingText+"</p><br>");
-
-    // var wineInMkt = response.productMatches[0];
-    //       $("#wine-display").html("<br><br><br><br><h4> Suggested wine in market: </h4>"+
-
-
-    // "<br> title  :" +wineInMkt.title+
-    // "<br> price :" +wineInMkt.price+
-    // "<br> AverageRating :" +wineInMkt.averageRating+
-    // "<br> description :" +wineInMkt.description+
-    // "<br> <img src='"+ wineInMkt.imageUrl+"' height='250' width= '250'/>"+
-    // "<br> <a href='"+ wineInMkt.link+"'> Shopping link for this wine </a>"
 
             }
             
