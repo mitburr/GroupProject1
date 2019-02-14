@@ -23,6 +23,10 @@ body {
 	font-family: 'Fanwood Text', serif;
 }
 
+.btn-secondary{
+	background-color: rgb(52, 58, 64);
+}
+
 #main-row{
 	height: 100%;
 	margin: 0;
@@ -52,43 +56,17 @@ h5, h3, h2{
 	border: rgba(79, 84, 88, 0.884) 5px ridge;
 }
 
-
-/* Clicked Recipe
-#clicked-recipe{
-	padding: 18%;
+#wine-button{
+	margin-right: 1rem;
+	margin-bottom: 1rem;
 }
 
-#main-recipe-title{
-	margin-bottom: 10%;
-	height: auto;
-}
-	
-#main-recipe-description{
-	margin-bottom: 10%;
-	height: auto;
-}
-
-#main-recipe-ingredients{
-	margin-bottom: 10%;
-	height: auto;
-}
-
-#main-recipe-link{
-	margin-bottom: 10%;
-	height: auto;
-}
-*/
-
-
-																	/* remove color if works */
 #middle-main-content-div{
 	margin: auto;
 	margin-top: 5rem;
 	background-color: rgba(222, 184, 135, 0.8);
-	/* background-color: rgb(52, 58, 64);
-	color: white; */
+	border: rgba(79, 84, 88, 0.884) 5px ridge;
 }
-
 
 #title-and-ingredients-column{
 	margin: auto;
@@ -103,24 +81,14 @@ h5, h3, h2{
 	font-size: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Wine Column */
 
 #wine-column
 {
 	background-color: rgba(222, 184, 135, 0.8);
+	border: rgba(79, 84, 88, 0.884) 5px ridge;
 }
+
 #wine-type{
 	margin: 1rem;
 	padding: 1rem;

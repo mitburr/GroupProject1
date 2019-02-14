@@ -10,7 +10,6 @@ font-family: 'Allura', cursive;
 font-family: 'Italianno', cursive;
 */
 
-
 body{
 	background: url(../images/romanticDate.jpg) no-repeat center center fixed; 
 	background-size: cover;
@@ -20,7 +19,6 @@ body{
 
 .standard-colors{
 	background-color: #ad656d9b;
-	/* border: #829c75 5px solid; */
 	border: rgb(52, 58, 64) 10px ridge;
 }
 
@@ -28,15 +26,6 @@ body{
 	padding: 1rem;
 	margin-top: 1rem;
 	margin-bottom: 2rem;
-}
-
-
-
-#modal-button{
-	position: absolute;
-	right: 0;
-	margin: auto;
-	margin-right: 2rem;
 }
 
 #search-button{
@@ -51,13 +40,11 @@ body{
 
 #carouselExampleIndicators{
 	margin-bottom: 2em;
-	/* max-width: 600px; */
 }
 
 #grid-column{
 	text-align: center;
 }
-
 
 .dropdown-divider{
 	margin-left: 10px;
@@ -73,40 +60,36 @@ body{
 .btn-secondary{
 	background-color: rgb(52, 58, 64);
 }
+
 #copyright-text{
 	color: white;
 }
 
 input {
 	width: 60%;
-  }
+}
 
-  #recipeIngredientsArea{
-	  display: block;
-	  text-align: center;
-  }
+#recipeIngredientsArea{
+	display: block;
+	text-align: center;
+}
 
-  #recipeGenerator{
-	  margin-bottom: 10px;
-  }
+#recipeGenerator{
+	margin-bottom: 10px;
+}
 
-  #searchBox{
+#searchBox{
 	font-display: block;
 	text-align: center;
 	font-size: 50px;
 	margin: 0;
-  }
+}
 
-  #ingredientField{
+#ingredientField{
 	font-display: block;
 	text-align: center;
-  }
+}
 
 #logo{
 	font-family: 'Audiowide', cursive; 
 }
-
-  /* h1{
-	margin: auto;
-	margin-left: 1rem;
-} */
