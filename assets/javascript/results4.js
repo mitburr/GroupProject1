@@ -373,7 +373,9 @@ function displayRecipes(data) {
         $(divId).append("<p hidden id='ingredientsList_"+ (results[index].id)+"'>" + (results[index].ingredients) + " </p>"); 
         $(divId).attr("id",results[index].id);  
     }
+    $(".side-recipe-div")[0].click();
 }
+
 
 $(".side-recipe-div").on("click", function () {
 
@@ -389,10 +391,10 @@ $(".side-recipe-div").on("click", function () {
     var ingredientsList = ($(ingredientsListId).text()).split(",");
     
     $("#title-div").text(recipeName);
-    $("#image-column").append("<img class='w-100' src='"+ imgSrc+"'/>");
+    $("#image-column").html("<img class='w-100' src='"+ imgSrc+"'/>");
+    $("#ingredients-div").empty();
     if (ingredientsList.length > 0) {
          var ingTable = $("<table>");
-         $(ingTable).addClass("bg-light");
         for (index in ingredientsList) {
            var tableRow = $("<tr>");
         //    tableRow.append("<td> <input type='checkbox' id='" + ingredientsList[index] + "'/> </td>");
@@ -402,8 +404,32 @@ $(".side-recipe-div").on("click", function () {
         $("#ingredients-div").append(ingTable);
     }
     console.log("recipeName",recipeName);
+    searchRecipe(clickedId);
    getfoodNames(recipeName);
 });
+
+ function searchRecipe(APIcall2) {
+
+        var queryURL = "https://api.yummly.com/v1/api/recipe/" + APIcall2 + "?_app_id=23c56a38&_app_key=0e54a8ce40a665ee3dc2dc122f3dbac7";
+        console.log(queryURL)
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+            dataType: "json"
+        })
+            .done(function (response) {
+                displayRecipes(response)
+
+            })
+        function displayRecipes(response) {
+            console.log(response)
+            $("#receipe-link-div").empty();
+            var recipeID = "<a href='" + (response.source.sourceRecipeUrl) + "'target='_blank'>Recipe Link</a>";
+            console.log(recipeID)
+            $('#receipe-link-div').append(recipeID);
+
+        }
+    }
 
 
 function getfoodNames(recipeName) {
@@ -469,7 +495,7 @@ function winePairingAjaxcall(foodNameList) {
                         //winePairingList
                         winePaired = true;
                         $("#wine-column").show();
-                        $("#wine-pairing").prepend("<h5>Wines paired for"+value+"</h5>");
+                        $("#wine-pairing").html("<h5>Wines paired for"+value+"</h5>");
                         $("#wine-type").html("<h5>"+(response.pairedWines).join(' , ')+"<h5>");
                         $("#wine-type-description").text(response.pairingText);
 
