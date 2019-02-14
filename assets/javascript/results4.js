@@ -95,6 +95,13 @@ $(".side-recipe-div").on("click", function () {
 
 
 function getfoodNames(recipeName) {
+    var foodNameList = [];
+    if(recipeName.split(" ").length >1)
+    {
+        $.each(recipeName.split(" "), function (index, value) {
+            foodNameList.push(value)
+        });
+    }
     var foodNameListURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/queries/analyze?q=" + recipeName;
     console.log("tfoodNameListURL", foodNameListURL);
     // Performing an AJAX request with the foodNameListURL
@@ -106,21 +113,66 @@ function getfoodNames(recipeName) {
         }
     })
         .then(function (response) {
-            var foodNameList = [];
+            
 
             if (response.cuisines.length > 0) {
                 $.each(response.cuisines, function (index, value) {
-                    foodNameList.push(value.name);
+                    if(value.name.split(" ").length >1)
+                    {
+                        $.each(value.name.split(" "), function (index, value) {
+                            foodNameList.push(value)
+                        });
+                    }
+                    else if(value.name.split("-").length >1)
+                    {
+                        $.each(value.name.split("-"), function (index, value) {
+                            foodNameList.push(value)
+                        });
+                    }
+                    else
+                    {
+                     foodNameList.push(value.name);
+                    }
                 });
             }
             else if (response.dishes.length > 0) {
                 $.each(response.dishes, function (index, value) {
-                    foodNameList.push(value.name);
+                    if(value.name.split(" ").length >1)
+                    {
+                        $.each(value.name.split(" "), function (index, value) {
+                            foodNameList.push(value)
+                        });
+                    }
+                    else if(value.name.split("-").length >1)
+                    {
+                        $.each(value.name.split("-"), function (index, value) {
+                            foodNameList.push(value)
+                        });
+                    }
+                    else
+                    {
+                     foodNameList.push(value.name);
+                    }
                 });
             }
             else if (response.ingredients.length > 0) {
                 $.each(response.ingredients, function (index, value) {
-                    foodNameList.push(value.name);
+                    if(value.name.split(" ").length >1)
+                    {
+                        $.each(value.name.split(" "), function (index, value) {
+                            foodNameList.push(value)
+                        });
+                    }
+                    else if(value.name.split("-").length >1)
+                    {
+                        $.each(value.name.split("-"), function (index, value) {
+                            foodNameList.push(value)
+                        });
+                    }
+                    else
+                    {
+                     foodNameList.push(value.name);
+                    }
                 });
             }
             else {
