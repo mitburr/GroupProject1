@@ -9,6 +9,10 @@ $(document).ready(function () {
 
     //on click function for adding ingredients to array
     $("#addIngredients-button").on("click", function () {
+        if ($('#ingredientField').val() === ""){
+            return;
+        }
+        else {
         var userInput = $('#ingredientField').val();
         ingredientsArray.push(userInput)
         $("#recipeGenerator")[0].reset() //clears search field
@@ -20,6 +24,7 @@ $(document).ready(function () {
        buttonCounter++;
         $('#ingredientsDisplay').append(newItem);
         console.log("Ingredients Array: ", ingredientsArray);
+        }
     });
 
     //Remove Ingredient Function
