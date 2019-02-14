@@ -20,6 +20,7 @@
 
 <body onload="onLoadFunction()">
 
+<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-container">
 		<a class="navbar-brand" href="index.html">[Logo here]</a>
 		<a class="navbar-brand" href="index.html">Back to Search</a>
@@ -37,8 +38,10 @@
 		</div>
 	</nav>
 
-
+<!-- Main row (fills screen) -->
 	<div class="row" id="main-row">
+
+	<!-- Homes for the recipes on the left side -->
 		<div class="col-md-2" id="recipes-side-column">
 			<div class="side-recipe-div" id="recipe-div-0">
 				<div class="side-recipe-title" id="recipe-title-0"></div>
@@ -61,11 +64,7 @@
 			</div>
 		</div>
 
-
-
-
-		<!-- previous center column -->
-
+	<!-- old center column -->
 		<!-- <div class="col-md-6" id="recipe-main-column">
 			<div id="clicked-recipe">
 				<div id="main-recipe-title"></div>
@@ -76,12 +75,9 @@
 				<div id="main-recipe-ingredients"></div>
 			</div>
 		</div> -->
+	<!-- end of old center column -->
 
-
-
-		
-		<!-- new center column -->
-
+	<!-- new center column -->
 		<div class="col-md-6">
 			<div class="row" id="middle-main-content-div">
 
@@ -93,15 +89,9 @@
 				<div class="col-md-6" id="image-column">Image</div>
 			</div>
 		</div>
+	<!-- end of new center column -->
 
-
-		<!-- end of new center column -->
-
-
-
-
-
-
+	<!-- Wine Column -->
 		<div class="col-md-3" id="wine-column">
 			<div id="wine-pairing"></div>
 			<div id="wine-type"></div>
@@ -110,7 +100,7 @@
 			</div>
 		</div>
 
-		<!-- will show up when "Mode" button (above) is pressed -->
+	<!--Will show up when "More" button (above) is pressed -->
 		<div id="wine-price-details">
 			<div id="wine-brand"></div>
 			<div id="wine-brand-description"></div>
@@ -119,9 +109,8 @@
 			<div id="wine-brand-image"></div>
 		</div>
 	</div>
-	</div>
 
-	<!-- jQuery first (removed -causing conflict by LG), then Popper.js, then Bootstrap JS -->
+<!-- jQuery first (removed -causing conflict by LG), then Popper.js, then Bootstrap JS -->
 	<script src="assets/javascript/results4.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
 		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
