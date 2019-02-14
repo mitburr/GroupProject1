@@ -1,25 +1,28 @@
 # GroupProject1
-This is our Group Project 1
 
 Project Title: Quick Recipes
 
-Team Members
-Logan Geoffrion
-Shankarri Ragavan
-Taylor Hrypa
-Beckett Witzke
-Mitchell Burr
+
+"Back End"
+  Search Function:
+    Logan Geoffrion
+  Wine API
+    Shankarri Ragavan
+  Heroku & Yummly API:
+    Beckett Witzke
+  Index:
+    Taylor Hrypa
+  Results:
+    Mitchell Burr
 
 
-Project Description
-Pull a recipe based on ingredients you have and provide receipes based on those ingredients and a list of ingredients needed and their cost
+Project Description:
+Our application pulls recipe results from Yummly's API based on recipe name or by ingredient. Then, it will list the recipe ingredients and it includes a button to the instructions for the recipe. It will also compare the ingredients and search for wine pairings from a second API. 
 
-Sketch of Final Product
-Whiteboard sketch
-
-APIs to be Used
+APIs used:
 Yummly
-Amazon
+Spoonacular
 
-Rough Breakdown of Tasks
-TBA
+New technology:
+Heroku w/ guide
+https://docs.google.com/document/d/1bbCMnYzKWfgkwbYafPzusjOJKjrZ9d_BvA4HTJAHVQg/edit?usp=sharing
