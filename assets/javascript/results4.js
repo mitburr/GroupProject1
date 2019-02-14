@@ -388,9 +388,8 @@ $(".side-recipe-div").on("click", function () {
     var imgSrc = $(imgId).attr("src");
     var ingredientsList = ($(ingredientsListId).text()).split(",");
     
-    $("#main-recipe-title").text(recipeName);
-    $("#main-recipe-link img").attr("src", imgSrc);
-    
+    $("#title-div").text(recipeName);
+    $("#image-column").append("<img class='w-100' src='"+ imgSrc+"'/>");
     if (ingredientsList.length > 0) {
          var ingTable = $("<table>");
          $(ingTable).addClass("bg-light");
@@ -400,7 +399,7 @@ $(".side-recipe-div").on("click", function () {
            tableRow.append("<td>" + ingredientsList[index] + "</td>");
            ingTable.append(tableRow);
         }
-        $("#main-recipe-ingredients").append(ingTable);
+        $("#ingredients-div").append(ingTable);
     }
     console.log("recipeName",recipeName);
    getfoodNames(recipeName);

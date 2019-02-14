@@ -92,6 +92,10 @@ body {
 
 /* Wine Column */
 
+#wine-column
+{
+	background-color: burlywood;
+}
 #wine-type{
 	margin: 1rem;
 	padding: 1rem;
