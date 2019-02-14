@@ -1,5 +1,5 @@
 # GroupProject1
-![App Face](GroupProject1/assets/images/appFace.png)
+![App Face](assets/images/appFace.png)
 
 
 Project Title: Quick Recipes
