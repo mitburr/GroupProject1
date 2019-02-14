@@ -1,32 +1,36 @@
+/* Available Google Font Familes : 
+font-family: 'Goudy Bookletter 1911', serif;
+font-family: 'Mate', serif;
+font-family: 'Trirong', serif;
+font-family: 'Fanwood Text', serif; */
+
+
 body{
-	
-	background-image: url(../images/romanticDate.jpg);
+	background: url(../images/romanticDate.jpg) no-repeat center center fixed; 
 	background-size: cover;
 	background-color: #99313b;
+	font-family: 'Fanwood Text', serif;
 }
 
 .standard-colors{
-	background-color: #ad656d;
+	background-color: #ad656d9b;
 	/* border: #829c75 5px solid; */
 	border: rgb(52, 58, 64) 10px ridge;
 }
 
 .jumbotron{
-	padding: 2rem;
-	margin-top: 2rem;
-	margin-bottom: 100px;
+	padding: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 }
 
-h1{
-	margin: auto;
-	margin-left: 1rem;
-}
+
 
 #modal-button{
 	position: absolute;
 	right: 0;
 	margin: auto;
-	margin-right: 3rem;
+	margin-right: 2rem;
 }
 
 #search-button{
@@ -41,6 +45,7 @@ h1{
 
 #carouselExampleIndicators{
 	margin-bottom: 2em;
+	/* max-width: 600px; */
 }
 
 #grid-column{
@@ -65,3 +70,28 @@ h1{
 #copyright-text{
 	color: white;
 }
+
+input {
+	width: 50%;
+  }
+
+  #recipeIngredientsArea{
+	  display: block;
+	  text-align: center;
+  }
+
+  #recipeGenerator{
+	  margin-bottom: 10px;
+  }
+
+  #searchBox{
+	font-display: block;
+	text-align: center;
+	font-size: 50px;
+	margin: 0;
+  }
+
+  /* h1{
+	margin: auto;
+	margin-left: 1rem;
+} */
