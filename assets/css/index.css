@@ -2,7 +2,13 @@
 font-family: 'Goudy Bookletter 1911', serif;
 font-family: 'Mate', serif;
 font-family: 'Trirong', serif;
-font-family: 'Fanwood Text', serif; */
+font-family: 'Fanwood Text', serif;
+font-family: 'Audiowide', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Parisienne', cursive;
+font-family: 'Allura', cursive;
+font-family: 'Italianno', cursive;
+*/
 
 
 body{
@@ -72,7 +78,7 @@ body{
 }
 
 input {
-	width: 50%;
+	width: 60%;
   }
 
   #recipeIngredientsArea{
@@ -90,6 +96,15 @@ input {
 	font-size: 50px;
 	margin: 0;
   }
+
+  #ingredientField{
+	font-display: block;
+	text-align: center;
+  }
+
+#logo{
+	font-family: 'Audiowide', cursive; 
+}
 
   /* h1{
 	margin: auto;
