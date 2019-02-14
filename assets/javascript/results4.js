@@ -19,7 +19,7 @@ function onLoadFunction() {
 function displayRecipes(data) {
     console.log(data)
     //\\ $("#clicked-recipe").empty();
-    var results = data;
+    var results = data.matches;
     for (var index = 0; index < 5; index++) {
     //    console.log (myrecipe);
        var divId = "#recipe-div-"+index;
@@ -153,7 +153,7 @@ function winePairingAjaxcall(foodNameList) {
                         //winePairingList
                         winePaired = true;
                         $("#wine-column").show();
-                        $("#wine-pairing").html("<h5>Wines paired for"+value+"</h5>");
+                        $("#wine-pairing").html("<h2>Wines paired for </h2>" + "<h3>" + value + "</h3>");
                         $("#wine-type").html("<h5>"+(response.pairedWines).join(' , ')+"<h5>");
                         $("#wine-type-description").text(response.pairingText);
 
