@@ -1,10 +1,23 @@
+/* Available Google Font Familes : 
+font-family: 'Goudy Bookletter 1911', serif;
+font-family: 'Mate', serif;
+font-family: 'Trirong', serif;
+font-family: 'Fanwood Text', serif;
+font-family: 'Audiowide', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Parisienne', cursive;
+font-family: 'Allura', cursive;
+font-family: 'Italianno', cursive;
+*/
+
 html, body{
 	height: 100%;
 }
 
 body {
     background-image: url(../images/pouringWine.jpg);
-    background-size: cover;
+	background-size: cover;
+	font-family: 'Fanwood Text', serif;
 }
 
 #main-row{
@@ -15,7 +28,9 @@ body {
 #recipe-main-column{
 	text-align: center;
 }
-
+#logo{
+	font-family: 'Audiowide', cursive; 
+}
 
 /* Side Recipes */
 
