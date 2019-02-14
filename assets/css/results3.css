@@ -33,14 +33,10 @@ body {
 }
 
 
-/* Main Column */
-
+/* Clicked Recipe
 #clicked-recipe{
 	padding: 18%;
 }
-
-
-/* Clicked Recipe */
 
 #main-recipe-title{
 	margin-bottom: 10%;
@@ -61,6 +57,37 @@ body {
 	margin-bottom: 10%;
 	height: auto;
 }
+*/
+
+
+																	/* remove color if works */
+#middle-main-content-div{
+	margin: auto;
+	margin-top: 5rem;
+	background-color: burlywood;
+}
+
+
+#title-and-ingredients-column{
+	margin: auto;
+}
+
+#image-column{
+	margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Wine Column */
