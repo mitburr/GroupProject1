@@ -64,9 +64,9 @@
 
 
 
-		
+		<!-- previous center column -->
 
-		<div class="col-md-6" id="recipe-main-column">
+		<!-- <div class="col-md-6" id="recipe-main-column">
 			<div id="clicked-recipe">
 				<div id="main-recipe-title"></div>
 				<div id="main-recipe-description"></div>
@@ -75,15 +75,27 @@
 				</div>
 				<div id="main-recipe-ingredients"></div>
 			</div>
+		</div> -->
+
+
+
+		
+		<!-- new center column -->
+
+		<div class="col-md-6">
+			<div class="row" id="middle-main-content-div">
+
+				<div class="col-md-6" id="title-and-ingredients-column">
+					<div id="title-div">title</div>
+					<div id="ingredients-div">ingredients</div>
+				</div>
+
+				<div class="col-md-6" id="image-column">Image</div>
+			</div>
 		</div>
 
 
-
-
-
-
-
-
+		<!-- end of new center column -->
 
 
 
@@ -93,19 +105,20 @@
 		<div class="col-md-3" id="wine-column">
 			<div id="wine-pairing"></div>
 			<div id="wine-type"></div>
-			<div id="wine-type-description"></div>
-			<button class="btn btn-secondary" id="wine-button" role="button">More</button>
+			<div id="wine-type-description">
+				<button class="btn btn-secondary" id="wine-button" role="button">More</button>
+			</div>
 		</div>
 
 		<!-- will show up when "Mode" button (above) is pressed -->
-			<div id="wine-price-details">
-				<div id="wine-brand"></div>
-				<div id="wine-brand-description"></div>
-				<div id="wine-brand-price"></div>
-				<div id="wine-brand-link"></div>
-				<div id="wine-brand-image"></div>
-			</div>
+		<div id="wine-price-details">
+			<div id="wine-brand"></div>
+			<div id="wine-brand-description"></div>
+			<div id="wine-brand-price"></div>
+			<div id="wine-brand-link"></div>
+			<div id="wine-brand-image"></div>
 		</div>
+	</div>
 	</div>
 
 	<!-- jQuery first (removed -causing conflict by LG), then Popper.js, then Bootstrap JS -->
