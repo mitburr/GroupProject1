@@ -10,9 +10,8 @@ let recipe = {
     ]
 }
 
-    let cardsDiv = $("#cardsDiv");
-    
-    let cardCreate = function (recipe) {
+let cardsDiv = $("#cardsDiv");
+let cardCreate = function (recipe) {
     let newCard = $("<div class='card bg-dark text-white'>");
     let cardImage = $("<img src='assets/images/Placeholder_Image_400x200_px.png' class='card-img'>");
     let cardImageOverlayDiv = $("<div class='card-img-overlay'>");
