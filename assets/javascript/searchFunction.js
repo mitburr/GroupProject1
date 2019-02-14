@@ -9,7 +9,8 @@ $(document).ready(function () {
 
     //on click function for adding ingredients to array
     $("#addIngredients-button").on("click", function () {
-        if ($('#ingredientField').val() === ""){
+        if ($('#ingredientField').val().trim() === ""){
+            $("#recipeGenerator")[0].reset()
             return;
         }
         else {
