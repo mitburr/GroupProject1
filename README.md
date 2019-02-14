@@ -1,8 +1,7 @@
 # GroupProject1
 This is our Group Project 1
 
-Project Title
-TBD
+Project Title: Quick Recipes
 
 Team Members
 Logan Geoffrion
