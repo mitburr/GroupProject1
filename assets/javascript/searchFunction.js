@@ -34,6 +34,7 @@ $(document).ready(function () {
         var ingtext = $(ingredientID).attr("value");
         ingredientsArray.splice(ingredientsArray.indexOf(ingtext),1)
         $(ingredientID).remove()
+        $(".errorMessage").remove()
         console.log("Ingredients Array: ", ingredientsArray);
     });
  
@@ -130,10 +131,21 @@ $(document).ready(function () {
             dataType: "json"
         })
         .done(function (response) {
+            //Throws error message if no results are found
+            if(response.totalMatchCount === 0){
+                sessionStorage.removeItem('apiCallResults');
+                sessionStorage.clear();
+                var error = ($("<p class='alert alert-danger errorMessage' role='alert'>" + "No Results Found - Please Ensure All Ingredients Added Don't Contain Numbers Or Are Spelled Correctly" +
+       "</p>"));
+                $('#ingredientsDisplay').append(error);
+                console.log("ERROR - No Results Found");
+            }
+            else{
             sessionStorage.removeItem('apiCallResults');
             sessionStorage.clear();
             sessionStorage.setItem('apiCallResults', JSON.stringify(response));
             openResultsPage();
+            }
         })
     }
 
