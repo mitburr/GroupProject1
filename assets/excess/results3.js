@@ -2,10 +2,10 @@
 let data = JSON.parse(sessionStorage.getItem('apiCallResults'));
 //console.log(data.matches);   
 
+
 // hide wine column and wine price details column by default
 // so if there are no wine pairing the wine pairing column will not appear in screen
 var myrecipe = [];
-var winePaired = false;
 $("#wine-column").hide();
 $("#wine-price-details").hide();
 
@@ -61,15 +61,11 @@ $(".side-recipe-div").on("click", function () {
     var ingredientsList = ($(ingredientsListId).text()).split(",");
     console.log("Recipe Name -- ", recipeName);
 
-    // foodNameList is needed for wine Pairing API
     var foodNameList = [];
     if (recipeName.split(" ").length > 1) {
         $.each(recipeName.split(" "), function (index, value) {
-            // if there are any '-' in the name like steak-raw, etc., then replace with space " "
-            value = (value.toLowerCase()).replace(/\-/g, ' ');
             foodNameList.push(value);
         });
-        
     }
 
     $("#title-div").html("<h4>" + recipeName + "</h4>");
@@ -82,7 +78,7 @@ $(".side-recipe-div").on("click", function () {
         var ingTable = $("<table>");
         for (index in ingredientsList) {
             foodNameList.push(ingredientsList[index]);
-            // most of the time the API call gives each ingredient in all lower case, but we should display the first character as upper case
+            // sometimes the API call gives each ingredient in all lower case, but we should display the first character as upper case
             // Syntax used  -- > ingredient.replace(first character lower case , first character upper case)
             var ingre = ingredientsList[index].replace(ingredientsList[index].charAt(0), ingredientsList[index].charAt(0).toUpperCase());
             var tableRow = $("<tr>");
@@ -95,21 +91,15 @@ $(".side-recipe-div").on("click", function () {
         // Append the table to the ingredients div
         $("#ingredients-div").append(ingTable);
     }
-
+    
     // Hide the wine pairing so if there are no wine pairing then it will be hidden
     $("#wine-column").hide();
     $("#wine-price-details").hide();
 
     //Second API call for getting the receipe URL link by passing the Rceipe ID and display under the ingredients list
     searchRecipe(clickedId);
-    
-    // call the wine pairing API for each food Name 
-    $.each(foodNameList, function (index, value) {
-        //once we get winePaired is true then don't run the ajax call
-        if (!winePaired && value != "") {
-            winePairingAjaxcall(value);
-        }
-    });
+    winePairingAjaxcall(foodNameList);
+  // getfoodNames(recipeName,ingredientsList);
 });
 
 // -------------------------------------------------------------------------//
@@ -124,74 +114,62 @@ function searchRecipe(APIcall2) {
         dataType: "json"
     }).then(function (response) {
         //Append the receipe link button, which on click will open a new tab with the receipe instructions  
-        $("#receipe-link-div").empty();
-        var recipeID = "<button class='btn btn-secondary'>" +
-            "<a class='text-light ' style='font-size: 20px' href='" + (response.source.sourceRecipeUrl) + "'target='_blank'> " +
-            "Click here to see the Full receipe</a></button>";
-        $('#receipe-link-div').append(recipeID);
+            $("#receipe-link-div").empty();
+            var recipeID = "<button class='btn btn-secondary'>" +
+                "<a class='text-light ' style='font-size: 20px' href='" + (response.source.sourceRecipeUrl) + "'target='_blank'> " +
+                "Click here to see the Full receipe</a></button>";
+            $('#receipe-link-div').append(recipeID);
 
+        });
+}
+
+// -------------------------------------------------------------------------//
+
+function winePairingAjaxcall(foodNameList) {
+    var winePaired = false;
+    $.each(foodNameList, function (index, value) {
+        if (!winePaired) {
+            console.log("value", value);
+            value = (value.toLowerCase()).replace(/\-/g, '');
+            var value1 = value.replace(value.charAt(0), value.charAt(0).toUpperCase());
+            var winePairingURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/pairing?maxPrice=50&food=" + value;
+
+            console.log("winePairingURL", winePairingURL);
+            // Performing an AJAX request with the foodNameListURL
+            $.ajax({
+                url: winePairingURL,
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key": "84b7f3975dmshf1a2fdc786671cap19ac4fjsn5bb2b98f52e9"
+                }
+            })
+                .then(function (response) {
+                    console.log("response", response);
+                    if ((!response.status) && (response.pairingText != "")) {
+                        //winePairingList
+                        winePaired = true;
+                        $("#wine-column").show();
+                        $("#wine-pairing").html("<h4>Wines paired for <span class='text-warning font-weight-bold'>" + value1 + "</span></h4>");
+                        $("#wine-type").html("<h4 style='font-weight: bold; color: rgba(137, 61, 70, 1);'>" + (response.pairedWines).join(' (or) ') + "<h4>");
+                        $("#wine-type-description").text(response.pairingText);
+
+                        if (response.productMatches.length > 0) {
+                            $("#wine-brand").html("<h4 style='font-weight: bold;'> " + response.productMatches[0].title + "</h4>");
+                            // $("#wine-brand-description").html("<h4>" + response.productMatches[0].description + "</h4>");
+                            $("#wine-brand-price").html("<h4> Price : " + response.productMatches[0].price + "</h4>");
+                            $("#wine-brand-link").html("<h4>Wine shopping URL :<u> " +
+                                "<a class='text-dark' target='_blank' href='" + response.productMatches[0].link + "'>" +
+                                response.productMatches[0].title + "</u></a></h4>");
+                            $("#wine-brand-image").html("<img class='w-50' src='" + response.productMatches[0].imageUrl + "'/>");
+                        }
+                    }
+                });
+        }
     });
 }
 
 // -------------------------------------------------------------------------//
 
-function winePairingAjaxcall(foodName) {
-
-    // Call the wine pairing API with food name like steak, chicken, etc., as parameter
-    var winePairingURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/pairing?maxPrice=50&food=" + foodName;
-    console.log("foodName", foodName);
-
-    // Performing an AJAX request with the winePairingURL
-    $.ajax({
-        url: winePairingURL,
-        method: "GET",
-        async: false,
-        headers: {
-            "X-RapidAPI-Key": "84b7f3975dmshf1a2fdc786671cap19ac4fjsn5bb2b98f52e9"
-        }
-    })
-    .done(function (response) {
-        console.log("response", response);
-        /* If response is success, then resulting response object -- >
-         response { 
-            pairedWines: ["chardonnay","pinot noir", "sauvignon blanc"]
-            pairingText: "Chicken can be paired with Chardonnay, Pinot Noir,…good match. It costs about 18 dollars per bottle.", 
-            productMatches: [{ ** Price-Details here ** }]
-        } */
-
-        /* If response is failure, then resulting response object -- > 
-         response {status: "failure", message: "Could not find a wine pairing for man pleasing"}  */
-
-        // based on the success and failure responses we know, we display only if it is success message
-        // if the response does not have a status and the pairing text is not empty and if wine is not already paired
-        if ((!response.status) && (response.pairingText != "") && !winePaired) {
-            winePaired = true;
-            $("#wine-column").show();
-
-            // most of the time the API call gives each ingredient in all lower case, but we should display the first character as upper case
-            // Syntax used  -- > ingredient.replace(first character lower case , first character upper case) 
-            var foodNameUppercase = foodName.replace(foodName.charAt(0), foodName.charAt(0).toUpperCase());
-
-            // Display the wines pairing columns in the page
-            $("#wine-pairing").html("<h4>Wines paired for <span class='text-warning font-weight-bold'>" + foodNameUppercase + "</span></h4>");
-            $("#wine-type").html("<h4 style='font-weight: bold; color: rgba(137, 61, 70, 1);'>" + (response.pairedWines).join(' (or) ') + "<h4>");
-            $("#wine-type-description").text(response.pairingText);
-        
-            // update the wines pricing details also in the page but those details are currently hidden from the user 
-            if (response.productMatches.length > 0) {
-                $("#wine-brand").html("<h4 style='font-weight: bold;'> " + response.productMatches[0].title + "</h4>");
-                // $("#wine-brand-description").html("<h4>" + response.productMatches[0].description + "</h4>");
-                $("#wine-brand-price").html("<h4> Price : " + response.productMatches[0].price + "</h4>");
-                $("#wine-brand-link").html("<h4>Wine shopping URL :<u> " +
-                    "<a class='text-dark' target='_blank' href='" + response.productMatches[0].link + "'>" +
-                    response.productMatches[0].title + "</u></a></h4>");
-                $("#wine-brand-image").html("<img class='w-50' src='" + response.productMatches[0].imageUrl + "'/>");
-            }
-
-        }
-    });
-
-}
 
 //When button wine button is clicked 
 $("#wine-button").on("click", function () {
