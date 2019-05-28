@@ -44,7 +44,9 @@ APIs used:
 
 Yummly
 
-Spoonacular
+Spoonacular*
+
+*This API is premium and was therefore only available for project grading. Because of this the wine suggestions are not functional. 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
